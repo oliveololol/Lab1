@@ -1,18 +1,50 @@
 #include <iostream>
 #include <windows.h>
 
+using namespace std;
+    
+
 int main() {
-    // Отримуємо дескриптор консолі
+    SetConsoleTitle(L"Іван");
+    int a = 0;
+    int b = 0;
+    char c;
+    cout << "vedit 1 number = ";
+    cin >> a;
+    cout << "vedit 2 number = ";
+    cin >> b;
+    cout << "vedit znak = ";
+    cin >> c;
+    switch (c)
+    {
+    case '+':
+        cout << a + b << endl;
+        break;
+    case '-':
+        cout << a - b << endl;
+        break;
+    case '*':
+        cout << a * b << endl;
+        break;
+    case '/':
+        cout << a / b << endl;
+        break;
+
+
+    }
+    
+
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    // Задаємо кольори фону і тексту
+
     SetConsoleTextAttribute(hConsole, BACKGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
 
 
-    // Виводимо текст з новими кольорами
-    std::cout << "background and text!" << std::endl;
+
+    cout << "background and text!" << std::endl;
 
 
-
+    system("pause");
     return 0;
 }
